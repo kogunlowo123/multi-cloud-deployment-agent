@@ -7,7 +7,7 @@ from typing import AsyncIterator, Any, Optional
 from datetime import datetime, timezone
 
 import structlog
-from langchain.schema import HumanMessage, SystemMessage, AIMessage
+from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 
 from src.config import get_settings
 from src.models.schemas import ChatRequest, ChatResponse, StreamChunk
@@ -48,7 +48,7 @@ class MultiCloudDeploymentAgentAgent:
         self.tools = AgentTools()
         self._conversation_cache: dict[str, list[dict]] = {}
         self._system_prompt = SYSTEM_PROMPT
-        self.multi-cloud_enabled = True
+        self.multi_cloud_enabled = True
         self.deployment_enabled = True
         self.architecture_review_enabled = True
         self.cost_optimization_enabled = True
